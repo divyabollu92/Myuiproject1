@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="store">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    
+    <!-- Angular JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body ng-controller="StoreController as store">
+  	<div ng-repeat="product in store.products">
+    	<h1>{{product.name}}</h1>
+    	<h2>${{product.price}}</h2>
+    	<p>{{product.description}}</p>
+      <button ng-show="store.products[0].canPurchase">Add to Cart</button>
+	</div>
+  </body>
+</html>
